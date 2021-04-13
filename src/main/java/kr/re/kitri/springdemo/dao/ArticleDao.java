@@ -11,4 +11,9 @@ public class ArticleDao {
         // query 수행... later..
         return "모든 글입니다. from dao..";
     }
+
+    // 글쓰기
+    public String insertArticle() {
+        return "글쓰기가 완료되었습니다. from dao";
+    }
 }

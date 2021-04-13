@@ -37,4 +37,8 @@ public class ArticleDao {
         System.out.println(article + " from dao..");
         return "글쓰기가 완료되었습니다. from dao";
     }
+
+    public Article selectArticleByArticleId(int articleId) {
+        return new Article(articleId, "aaa", "aaa", "aaaa", null, 10);
+    }
 }

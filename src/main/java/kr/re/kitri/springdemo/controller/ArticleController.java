@@ -3,10 +3,7 @@ package kr.re.kitri.springdemo.controller;
 import kr.re.kitri.springdemo.model.Article;
 import kr.re.kitri.springdemo.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,6 +23,11 @@ public class ArticleController {
     @PostMapping("/articles")
     public String registArticle(@RequestBody Article article) {
         return articleService.registArticle(article);
+    }
+
+    @GetMapping("/articles/{articleId}")
+    public Article viewArticleDetailByArticleId(@PathVariable int articleId) {
+        return articleService.getArticleByArticleId(articleId);
     }
 
 }

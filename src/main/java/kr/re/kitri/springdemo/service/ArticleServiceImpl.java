@@ -22,6 +22,11 @@ public class ArticleServiceImpl implements ArticleService {
         return articleDao.selectAllArticles();
     }
 
+    @Override
+    public Article getArticleByArticleId(int articleId) {
+        return articleDao.selectArticleByArticleId(articleId);
+    }
+
     // 글 등록하기
     @Override
     public String registArticle(Article article) {

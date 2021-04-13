@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface ArticleService {
 
-    String registArticle();
+    String registArticle(Article article);
     List<Article> getAllArticles();
 }

@@ -5,6 +5,7 @@ import kr.re.kitri.springdemo.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -23,8 +24,8 @@ public class ArticleController {
 
     // 글쓰기
     @PostMapping("/articles")
-    public String registArticle() {
-        return articleService.registArticle();
+    public String registArticle(@RequestBody Article article) {
+        return articleService.registArticle(article);
     }
 
 }

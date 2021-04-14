@@ -26,7 +26,7 @@ public class ArticleController {
     }
 
     @GetMapping("/articles/{articleId}")
-    public Article viewArticleDetailByArticleId(@PathVariable int articleId) {
+    public Article viewArticleDetailByArticleId(@PathVariable long articleId) {
         return articleService.getArticleByArticleId(articleId);
     }
 

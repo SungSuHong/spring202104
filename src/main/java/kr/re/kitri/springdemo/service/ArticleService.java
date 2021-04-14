@@ -8,5 +8,5 @@ public interface ArticleService {
 
     String registArticle(Article article);
     List<Article> getAllArticles();
-    Article getArticleByArticleId(int articleId);
+    Article getArticleByArticleId(long articleId);
 }

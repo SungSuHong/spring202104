@@ -1,8 +1,14 @@
 package kr.re.kitri.springdemo.dao;
 
 import kr.re.kitri.springdemo.model.Article;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,6 +16,10 @@ import java.util.List;
 // CRUD 작업
 @Repository
 public class ArticleDao {
+
+    @Autowired
+    private DataSource ds;
+
     // 모든 글 조회
     public List<Article> selectAllArticles() {
         // query 수행... later..
@@ -39,6 +49,17 @@ public class ArticleDao {
     }
 
     public Article selectArticleByArticleId(long articleId) {
+
+        try {
+            Connection conn = ds.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement("select * from article");
+            ResultSet rs = pstmt.executeQuery();
+            // ..
+            conn.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
         return new Article(articleId, "aaa", "aaa", "aaaa", null, 10);
     }
 }

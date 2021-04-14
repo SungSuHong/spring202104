@@ -20,6 +20,6 @@ import java.util.List;
 public interface ArticleDao {
 
     List<Article> selectAllArticles();
-    String insertArticle(Article article);
+    void insertArticle(Article article);
     Article selectArticleByArticleId(long articleId);
 }

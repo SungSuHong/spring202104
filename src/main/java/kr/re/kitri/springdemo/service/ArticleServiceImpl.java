@@ -31,6 +31,7 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public String registArticle(Article article) {
         // DB에 insert into article values (...)
-        return articleDao.insertArticle(article);
+        articleDao.insertArticle(article);
+        return "insert ok..";
     }
 }

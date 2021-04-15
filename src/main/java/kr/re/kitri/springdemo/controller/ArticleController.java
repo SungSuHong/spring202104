@@ -16,6 +16,8 @@ public class ArticleController {
     // 전체보기
     @GetMapping("/articles")
     public List<Article> viewAllArticles() {
+
+
         return articleService.getAllArticles();
     }
 

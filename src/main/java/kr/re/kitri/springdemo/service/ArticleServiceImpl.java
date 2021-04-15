@@ -5,7 +5,12 @@ import kr.re.kitri.springdemo.model.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+import java.util.Random;
 
 // 기능 수행 - 트랜잭션 처리
 @Service
@@ -19,6 +24,11 @@ public class ArticleServiceImpl implements ArticleService {
     public List<Article> getAllArticles() {
         // DB에 접근해서 전체 글 데이터를 가져온다.
         // select * from aritlce;
+
+        int a = new Random().nextInt(3);
+        int b = 3 / a;
+        System.out.println(a);
+
         return articleDao.selectAllArticles();
     }
 

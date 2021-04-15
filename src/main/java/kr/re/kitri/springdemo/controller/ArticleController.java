@@ -21,8 +21,6 @@ public class ArticleController {
     // 전체보기
     @GetMapping("/articles")
     public List<Article> viewAllArticles() {
-
-        log.debug("viewAllArticle 컨트롤로 실행 by aaa..");
         return articleService.getAllArticles();
     }
 

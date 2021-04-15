@@ -29,9 +29,9 @@ public class ArticleServiceImpl implements ArticleService {
         // DB에 접근해서 전체 글 데이터를 가져온다.
         // select * from aritlce;
 
-        int a = new Random().nextInt(3);
-        int b = 3 / a;
-        log.debug(a + "");
+//        int a = new Random().nextInt(3);
+//        int b = 3 / a;
+//        log.debug(a + "");
 
         return articleDao.selectAllArticles();
     }

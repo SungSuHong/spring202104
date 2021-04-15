@@ -2,13 +2,18 @@ package kr.re.kitri.springdemo.controller;
 
 import kr.re.kitri.springdemo.model.Article;
 import kr.re.kitri.springdemo.service.ArticleService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 public class ArticleController {
+
+    public static Logger log = LoggerFactory.getLogger(ArticleController.class);
 
     @Autowired
     private ArticleService articleService;
@@ -17,7 +22,7 @@ public class ArticleController {
     @GetMapping("/articles")
     public List<Article> viewAllArticles() {
 
-
+        log.debug("viewAllArticle 컨트롤로 실행 by aaa..");
         return articleService.getAllArticles();
     }
 

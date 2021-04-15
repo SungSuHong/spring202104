@@ -9,7 +9,7 @@
                 author,
                 content,
                 likes
-        from    articles
+        from    article
     </select>
     <insert id="insertArticle" parameterType="kr.re.kitri.springdemo.model.Article">
         insert into article (article_no, title, author, content, likes)

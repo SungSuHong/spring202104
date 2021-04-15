@@ -21,5 +21,4 @@ public class GlobalExceptionHandler {
         return "DB에러입니다... ";
     }
 
-
 }

@@ -2,6 +2,8 @@ package kr.re.kitri.springdemo.service;
 
 import kr.re.kitri.springdemo.dao.ArticleDao;
 import kr.re.kitri.springdemo.model.Article;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,8 @@ import java.util.Random;
 @Service
 public class ArticleServiceImpl implements ArticleService {
 
+    public static Logger log = LoggerFactory.getLogger(ArticleServiceImpl.class);
+
     @Autowired
     private ArticleDao articleDao;
 
@@ -27,7 +31,7 @@ public class ArticleServiceImpl implements ArticleService {
 
         int a = new Random().nextInt(3);
         int b = 3 / a;
-        System.out.println(a);
+        log.debug(a + "");
 
         return articleDao.selectAllArticles();
     }
